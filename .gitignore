@@ -1,0 +1,17 @@
+# Python
+app/venv/
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+
+# Environment and secrets
+.env
+*.pem
+*.key
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.
