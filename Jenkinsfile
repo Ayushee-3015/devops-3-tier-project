@@ -16,14 +16,16 @@ pipeline {
         }
 
         stage('Test Application') {
-            steps {
-                sh 'docker run -d --name devops-test -p 5001:5000 devops-flask-app:latest'
-                sh 'sleep 5'
-                sh 'curl -f http://host.docker.internal:5001/health
-                sh 'docker stop devops-test'
-                sh 'docker rm devops-test'
-            }
-        }
+    steps {
+        sh '''
+            docker rm -f devops-test >/dev/null 2>&1 || true
+            docker run -d --name devops-test -p 5001:5000 devops-flask-app:latest
+            sleep 5
+            curl -f http://host.docker.internal:5001/health
+            docker rm -f devops-test
+        '''
+    }
+}
 
         stage('Deploy to Kubernetes') {
             steps {
