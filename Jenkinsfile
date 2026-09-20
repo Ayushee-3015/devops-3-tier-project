@@ -19,7 +19,7 @@ pipeline {
             steps {
                 sh 'docker run -d --name devops-test -p 5001:5000 devops-flask-app:latest'
                 sh 'sleep 5'
-                sh 'curl -f http://localhost:5001/health'
+                sh 'curl -f http://host.docker.internal:5001/health
                 sh 'docker stop devops-test'
                 sh 'docker rm devops-test'
             }
