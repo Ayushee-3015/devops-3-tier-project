@@ -27,11 +27,20 @@ pipeline {
     }
 }
 
-        stage('Deploy to Kubernetes') {
-            steps {
-                echo 'Kubernetes deployment stage'
-                echo 'Application is ready for Kubernetes deployment'
-            }
-        }
+       stage('Deploy to Kubernetes') {
+    steps {
+        sh '''
+            export KUBECONFIG=/var/jenkins_home/kubeconfig
+
+            kubectl apply -f kubernetes/deployment.yaml
+            kubectl apply -f kubernetes/service.yaml
+
+            kubectl rollout restart deployment/devops-app
+            kubectl rollout status deployment/devops-app --timeout=120s
+
+            kubectl get pods
+        '''
+    }
+}
     }
 }
