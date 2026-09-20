@@ -18,7 +18,22 @@
 
 ## 📂 Project Structure
 
-### devops-3-tier-project/ │ ├── app/ │ ├── app.py │ ├── requirements.txt │ └── Dockerfile │ ├── kubernetes/ │ ├── deployment.yaml │ └── service.yaml │ ├── terraform/ │ └── Infrastructure as Code configuration │ ├── Jenkinsfile └── README.md
+### devops-3-tier-project/ 
+│ 
+├── app/ 
+│   ├── app.py 
+│   ├── requirements.txt 
+│   └── Dockerfile 
+│   
+├── kubernetes/ 
+│   ├── deployment.yaml 
+│   └── service.yaml 
+│ 
+├── terraform/ 
+│   └── Infrastructure as Code configuration 
+│ 
+├── Jenkinsfile
+└── README.md
 
 
 ## 🔄 CI/CD Pipeline
@@ -38,7 +53,7 @@
 ### ->The health check is performed using:
 ### curl -f http://host.docker.internal:5001/health
 
-### A successful response confirms that the application is running correctly.
+### ->A successful response confirms that the application is running correctly.
 
 ## 4. Deploy to Kubernetes
 ### Jenkins applies the Kubernetes manifests:
