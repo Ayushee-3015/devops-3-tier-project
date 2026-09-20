@@ -23,7 +23,7 @@
 ├── app/ 
 │   ├── app.py 
 │   ├── requirements.txt 
-│   └── Dockerfile 
+│   └── Dockerfile
 │   
 ├── kubernetes/ 
 │   ├── deployment.yaml 
