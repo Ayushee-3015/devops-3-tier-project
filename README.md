@@ -75,7 +75,8 @@
 ### ->Application health endpoint
 ### ->Rolling deployment verification
 
-### The Kubernetes deployment was tested successfully on a local Docker Desktop Kubernetes cluster.
+### The application was tested locally at `http://localhost:5000` using Kubernetes port forwarding.
+
 ### Useful commands:
 
 ### ->kubectl get pods
