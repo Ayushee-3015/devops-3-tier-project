@@ -46,6 +46,11 @@
 ## 2. Build Docker Image 
 ### The Flask application is containerized using Docker.
 
+### Docker Image
+
+![Docker Image](images/Docker-image.png)
+
+
 ## 3. Test Application
 ### ->Jenkins starts the newly built container and verifies the application's health endpoint.
 ### docker run -d --name devops-test -p 5001:5000 devops-flask-app:latest
@@ -65,6 +70,11 @@
 ### ->kubectl rollout status deployment/devops-app --timeout=120s
 ### ->Finally, Jenkins displays the running Kubernetes pods.
 
+### Jenkins Pipeline – Successful Build
+
+![Jenkins Successful Build](images/Jenkins-success.png)
+
+
 ## ☸️ Kubernetes
 
 ### The application is deployed using:
@@ -74,6 +84,15 @@
 ### ->2 application replicas
 ### ->Application health endpoint
 ### ->Rolling deployment verification
+
+### Kubernetes Pods Running
+
+![Kubernetes Pods Running](images/Kubernetes-pods.png)
+
+### Kubernetes Deployment and Service
+
+![Application Health Output](images/kubernetes-deployment.png)
+
 
 ### The application was tested locally at `http://localhost:5000` using Kubernetes port forwarding.
 
